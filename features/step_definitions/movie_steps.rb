@@ -23,23 +23,6 @@ end
 #  "When I uncheck the following ratings: PG, G, R"
 #  "When I check the following ratings: G"
 
-When /I (un)?check the following ratings: (.*)/ do |check, rating_list|
-  rating_list.split( ',' ).each_with_index{|item, index = 0| 
-  # log.debug(index)
-  # log.debug(check)
-  # log.debug(item)
-   if "check"==check
-     step %Q{I check "ratings_#{item}" }
-     step %Q{the "ratings_#{item}" checkbox must be checked} 
-   else
-     step %Q{I uncheck "ratings_#{field}"}
-     step %Q{the "ratings_#{field}" checkbox must not be checked}
-   end
-  }
-  # HINT: use String#split to split up the rating_list, then
-  #   iterate over the ratings and reuse the "When I check..." or
-  #   "When I uncheck..." steps in lines 89-95 of web_steps.rb
-end
 
 Then /I can see (all|none) of the movies/ do |choice|
   film_number = 0
