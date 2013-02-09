@@ -23,9 +23,32 @@ Background: movies have been added to database
 
 Scenario: sort movies alphabetically
   When I follow "Movie Title"
+  Then I should be on the home page
+  And I can see all of the movies
+  And I can see "When Harry Met Sally" after "The Terminator"
+  And I can see "The Terminator" after "The Incredibles"
+  And I can see "The Incredibles" after "The Help"
+  And I can see "The Help" after "Raiders of the Lost Ark"
+  And I can see "Raiders of the Lost Ark" after "Chocolat"
+  And I can see "Chocolat" after "Chicken Run"
+  And I can see "Chicken Run" after "Amelie"
+  And I can see "Amelie" after "Aladdin"
+  And I can see "Aladdin" after "2001: A Space Odyssey"
+ 
+
   # your steps here
 
 Scenario: sort movies in increasing order of release date
   When I follow "Release Date"
-  # your steps here
+  Then I should be on the home page
+  And I can see all of the movies
+  And I can see "The Help" after "The Incredibles"
+  And I can see "The Incredibles" after "Amelie"
+  And I can see "Amelie" after "Chocolat"
+  And I can see "Chocolat" after "Chicken Run"
+  And I can see "Chicken Run" after "Aladdin"
+  And I can see "Aladdin" after "When Harry Met Sally"
+  And I can see "When Harry Met Sally" after "The Terminator"
+  And I can see "The Terminator" after "Raiders of the Lost Ark"
+  And I can see "Raiders of the Lost Ark" after "2001: A Space Odyssey"
 
